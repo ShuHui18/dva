@@ -32,6 +32,11 @@ Resources:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
+        BaseUrl:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
         GetRepos:
           Type: Api
           Properties:

@@ -10,6 +10,11 @@ const app = express();
 app.use(cookieParser());
 app.use(morgan('tiny'));
 
+app.get('/', (req, res) => {
+  const fullUrl = req.protocol + '://' + req.get('host')
+  res.send(fullUrl)
+})
+
 app.get('/repos', [authorization.check], catchWrapper(listRepos));
 app.get('/pr', [authorization.check], catchWrapper(createPr));
 app.get('/oauth', catchWrapper(authorization.setAuth));
