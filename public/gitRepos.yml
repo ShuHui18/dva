@@ -1,23 +1,23 @@
-# - owner: blockchaintech-au
-#   repoName: csf-ui
-# - owner: blockchaintech-au
-#   repoName: csf-bff
-# - owner: blockchaintech-au
-#   repoName: csf-project-service
-# - owner: blockchaintech-au
-#   repoName: csf-wallet-service
-# - owner: blockchaintech-au
-#   repoName: csf-walletd-service
-# - owner: blockchaintech-au
-#   repoName: csf-ether-service
-# - owner: blockchaintech-au
-#   repoName: user-service
-# - owner: blockchaintech-au
-#   repoName: notification-service
-# - owner: blockchaintech-au
-#   repoName: kyc-service
-# - owner: blockchaintech-au
-#   repoName: kyc-admin
-
 - owner: blockchaintech-au
-  repoName: totoro
+  repoName: csf-ui
+- owner: blockchaintech-au
+  repoName: csf-bff
+- owner: blockchaintech-au
+  repoName: csf-project-service
+- owner: blockchaintech-au
+  repoName: csf-wallet-service
+- owner: blockchaintech-au
+  repoName: csf-walletd-service
+- owner: blockchaintech-au
+  repoName: csf-ether-service
+- owner: blockchaintech-au
+  repoName: user-service
+- owner: blockchaintech-au
+  repoName: notification-service
+- owner: blockchaintech-au
+  repoName: kyc-service
+- owner: blockchaintech-au
+  repoName: kyc-admin
+
+# - owner: blockchaintech-au
+#   repoName: totoro

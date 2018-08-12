@@ -27,7 +27,7 @@ async function repoReport(repo, accessToken) {
   let upToDate = true;
   if (!hasSha(masterCommits, developInfo.sha)) {
     expiredTime = getExpiredTime(developInfo.date, masterInfo.date);
-    prUrl = `/Prod/pr?owner=${repo.owner}&repoName=${repo.repoName}`;
+    prUrl = `/pr?owner=${repo.owner}&repoName=${repo.repoName}`;
     upToDate = false;
   }
   return {

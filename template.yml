@@ -42,11 +42,6 @@ Resources:
           Properties:
             Path: /repos
             Method: get
-        Oauth:
-          Type: Api
-          Properties:
-            Path: /oauth
-            Method: get
         CreatePr:
           Type: Api
           Properties:

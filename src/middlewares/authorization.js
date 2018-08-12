@@ -2,19 +2,18 @@ import githubAuth from '../services/githubAuth';
 
 class Authorization {
   async check(req, res, next) {
-    const accessToken = req.cookies.accessToken;
-    if (accessToken) {
+    if (req.query.code){
+      const accessToken = await githubAuth.accessToken(req.query.code);
       req.user = { accessToken };
+      res.cookie('accessToken', accessToken);
+      next();
+    } else if (req.cookies.accessToken) {
+      req.user = { accessToken: req.cookies.accessToken };
       next();
     } else {
-      res.redirect(githubAuth.authorizeUrl());
+      const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+      res.redirect(githubAuth.authorizeUrl(fullUrl));
     }
-  }
-
-  async setAuth(req, res) {
-    const token = await githubAuth.accessToken(req.query.code);
-    res.cookie('accessToken', token);
-    res.redirect('/Prod/repos');
   }
 }
 

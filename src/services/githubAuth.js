@@ -5,7 +5,7 @@ const CLIENT_ID = 'f5f40bab8debde6aeb24';
 const CLIENT_SECRET = 'a947758277e4751eeaddad789ebad355516d4b9f';
 
 class GithubAuth {
-  authorizeUrl() {
+  authorizeUrl(redirectUri) {
     const urlObj = url.format({
       protocol: 'https',
       hostname: 'github.com',
@@ -13,6 +13,7 @@ class GithubAuth {
       query: {
         client_id: CLIENT_ID,
         scope: 'repo',
+        redirect_uri: redirectUri,
       },
     });
     return urlObj.toString();

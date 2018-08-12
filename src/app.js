@@ -10,18 +10,17 @@ const app = express();
 app.use(cookieParser());
 app.use(morgan('tiny'));
 
-app.get('/', (req, res) => {
+app.get('/hui', (req, res) => {
   const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
   res.send(fullUrl)
 })
 
 app.get('/repos', [authorization.check], catchWrapper(listRepos));
 app.get('/pr', [authorization.check], catchWrapper(createPr));
-app.get('/oauth', catchWrapper(authorization.setAuth));
 
 app.use((err, req, res, next) => { // eslint-disable-line
   const status = err.status || 500;
-  const errorBody = {};
+  let errorBody = {};
   if (status === 500) {
     errorBody = err.message, {
       path: req.path,
