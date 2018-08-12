@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Repo Name</th>
+    <th>Up to date?</th>
+    <th>Expired time</th>
+    <th>Action</th>
+  </tr>
+  <% for(var i=0; i<repos.length; i++) {%>
+  <tr>
+    <td><%= repos[i].name %></td>
+    <td><%= repos[i].upToDate %></td>
+    <td><%= repos[i].expiredTime %></td>
+    <td>
+      <% if(repos[i].prUrl) { %>
+      <a href='<%= repos[i].prUrl %>'>Create Pr</a>
+      <% } %>
+    </td>
+  </tr>
+  <% } %>
+</table>
