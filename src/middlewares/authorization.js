@@ -14,7 +14,7 @@ class Authorization {
   async setAuth(req, res) {
     const token = await githubAuth.accessToken(req.query.code);
     res.cookie('accessToken', token);
-    res.redirect('/repos');
+    res.redirect('/Prod/repos');
   }
 }
 
