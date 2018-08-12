@@ -11,7 +11,7 @@ app.use(cookieParser());
 app.use(morgan('tiny'));
 
 app.get('/', (req, res) => {
-  const fullUrl = req.protocol + '://' + req.get('host')
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
   res.send(fullUrl)
 })
 
