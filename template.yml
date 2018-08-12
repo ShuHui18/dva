@@ -35,7 +35,7 @@ Resources:
         BaseUrl:
           Type: Api
           Properties:
-            Path: /
+            Path: /hui
             Method: get
         GetRepos:
           Type: Api
